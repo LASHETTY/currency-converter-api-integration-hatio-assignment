@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: currency-converter-api
+    env: docker
+    buildCommand: mvn clean install
+    startCommand: java -jar target/currency-converter-1.0.0.jar
+    envVars:
+      - key: PORT
+        value: 8087
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
